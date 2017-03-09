@@ -9,6 +9,7 @@ class Topology :
      def __init__(self):
 	self.Switch_num = 0
         self.Switch_list = []
+	self.Host_list = []
         self.Host_num = 0
         self.cpu_num = 0
         self.gpu_num = 0
@@ -18,18 +19,19 @@ class Topology :
 
 	host = resource.Host.Host(ram, self.Host_num)
 	self.Host_num = self.Host_num + 1
+	self.Host_list.append(host)
 	return host
 	
      def create_cpu(self,mips):
 	
-	cpu = resource.cpu.cpu(mips,self.cpu_num)
+	cpu = resource.cpu.cpu(mips)
 	self.cpu_num = self.cpu_num + 1
 
 	return cpu
 
      def create_gpu(self,gflops, memory, bandwidth, sm) :
 
-	gpu = resource.gpu.gpu(self.gpu_num, gflops, memory, bandwidth, sm)
+	gpu = resource.gpu.gpu( gflops, memory, bandwidth, sm)
 	self.gpu_num = self.gpu_num + 1
 
  	return gpu

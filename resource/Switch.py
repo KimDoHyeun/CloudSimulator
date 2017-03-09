@@ -15,6 +15,7 @@ class Switch:
     def add_Host(self,host):
 
 	self.Host.append(host)
+	host.switch = self
 
     def add_switch(self,switch):
 

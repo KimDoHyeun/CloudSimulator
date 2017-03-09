@@ -3,19 +3,13 @@
 
 class gpu:
 
-    GPU_ID = -1
-    Gflops = 0
-    Memory = 0
-    Bandwidth = 0
-    SM_number = 0
-    VM_list = []
+    gpu_num = 0
+    def __init__(self,GFLOPS,MEMORY,BANDWIDTH,SM) :
 
-    def __init__(self,ID,GFLOPS,MEMORY,BANDWIDTH,SM) :
-
-	self.GPU_ID = ID
+	self.GPU_ID = gpu.gpu_num
 	self.Gflops = GFLOPS
 	self.Memory = MEMORY
 	self.Bandwidth = BANDWIDTH
 	self.SM_NUMBER = SM
-
-
+	self.vm_list = []
+	gpu.gpu_num = gpu.gpu_num + 1

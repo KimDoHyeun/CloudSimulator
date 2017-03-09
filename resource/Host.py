@@ -3,14 +3,10 @@ import cpu
 
 class Host:
 
-    CPU = []
-    GPU = []
-    Ram = 0
-    Remaining_Ram = 0
-    Host_ID = 0
-
     def __init__(self,ram,ID):
-
+        self.CPU = []
+        self.GPU = []
+	self.switch = None
 	self.Ram =ram
 	self.Remaining_Ram = ram
 	self.Host_ID = ID
