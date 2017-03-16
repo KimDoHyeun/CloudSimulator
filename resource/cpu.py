@@ -77,7 +77,6 @@ class cpu:
 	
     
 a = cpu (4,4)
-
 print a.allocate_core(1,1)
 print a.vm_list
 print a.allocate_core(1,2)
